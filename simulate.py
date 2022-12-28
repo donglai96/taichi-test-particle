@@ -8,7 +8,7 @@ and prepare for the plot
 """
 
 
-from particles import Particle
+from particle import Particle
 import taichi as ti
 import constants as cst
 import numpy as np
