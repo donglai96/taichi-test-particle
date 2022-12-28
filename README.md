@@ -12,3 +12,4 @@ https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2012GL051202
 
 ## Usage
 python particle.py
+launch an electron at L = 5
