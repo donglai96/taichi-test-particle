@@ -1,12 +1,15 @@
-# import taichi as ti
+import taichi as ti
+from taichiphysics import *
+import constants as cst
 
-# @ti.data_oriented
-# class Wave:
-#     def __init__(self, nlat):
-#         """Init the wave, each wave has grid on lat
+@ti.dataclass
 
-#         Args:
-#             nlat (_type_): _description_
-#         """
+class Wave:
+    w:ti.f64 #frequency
+    lat0:ti.f64 #start lat
+    L: ti.f64 # location
+    wpe0: ti.f64
+    wce0: ti.f64
+    
 
 
