@@ -3,13 +3,24 @@ import constants as cst
 import numpy as np
 import taichi as ti
 import taichi.math as tm
-def ev2erg(ev):
-    erg = 1.60218e-12 * ev
-    return erg
 
-def erg2p(erg,m,c):
-    p = np.sqrt(erg*(erg + 2 * m*c**2))/ c
-    return p
+def ev2erg(ev):
+    return ev * 1.60218e-12
+def erg2ev(erg):
+    return erg / 1.60218e-12
+def e2p(e, E0=cst.Me*cst.C**2):
+    return np.sqrt(e * (e + 2 * E0)) / cst.C 
+
+def p2e(p, E0=cst.Me*cst.C**2):
+    return np.sqrt(p**2 * cst.C**2 + E0**2) - E0 
+
+def p2v(p,m= cst.Me):
+    gamma_m = m * np.sqrt(1 + p**2 /(m * m*cst.C**2)) 
+    return p/gamma_m
+
+def v2p(v,m = cst.Me):
+    gamma_m = m * 1 / np.sqrt(1 - v**2 / cst.C**2)
+    return gamma_m * v
 
 
 

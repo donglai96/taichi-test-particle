@@ -26,8 +26,10 @@ def get_dipole_numpy(L, lat, B0):
     sin_lat = np.sin(lat)
     Bz = B0/(L**3 * cos_lat**6) * np.sqrt(1 + 3 * sin_lat ** 2)
     return Bz
+# def get_density_numpy(n0,lat):
+#     return n0 * (np.cos(lat)**-4)
 def get_density_numpy(n0,lat):
-    return n0 * (np.cos(lat)**-4)
+    return n0 
 def s_numpy(L, R, lat):
     x = np.sin(lat)
     tt = np.sqrt(x**2 + 1.0 / 3)
@@ -84,7 +86,7 @@ if __name__ == '__main__':
     nlat = 10000
     latmax = 15
     n0 =10
-    L = 5
+    L = 6.4
     nw = 1
     waves = Waves( 1, L, nlat, 0, latmax*np.pi/180, n0)
     Bw_lat = np.zeros((nw, nlat)) + Bw0
